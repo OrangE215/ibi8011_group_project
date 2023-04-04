@@ -1,0 +1,12 @@
+Questions:
+1. What format should the input DNA be?
+2. Do we put in a section of DNA or a whole piece of DNA, and if it's a whole piece of DNA, do we need to split it, split it according to what principle?
+
+Plan:
+  task1- Liang_xiaoran
+  task2- Ye_guobiao
+  task3- Li_yicheng
+  task4- Zhou_congtai
+  task5- Gu_zhaoyu
+    Do FOXL1 and FOXC1 have overlapping binding sites? If so, try to print all overlapping binding sites.
+  poster- together
