@@ -1,0 +1,17 @@
+def check_binding(DNA):
+ FOXC1_binding_site='TATGTAAATAT'
+ FOXL1_binding_site='GTAAACA'
+ if DNA.isupper():
+  if FOXC1_binding_site in DNA or FOXL1_binding_site in DNA:
+   print("True")
+  else:
+   print("False")
+ else:
+  print("Warning! The input is incorrect!")
+DNA='input'
+check_binding(DNA)
+
+#define a function called check_binding
+#define the binding sites for FOXC1 and FOXL1
+#check whether the input format is correct, if not, give a warning.
+#check whether the input DNA contains the binding sites for FOXL1 or FOXC1, if so, print True. In other cases, print False.
