@@ -1,0 +1,22 @@
+tf1 = "TATGTAAATA"
+tf2 = "GTAAACA"
+
+# Find overlapping sequence
+overlap = ""
+for i in range(len(tf1)-4):
+    if tf1[i:i+5] in tf2:
+        overlap = tf1[i:i+5]
+        break
+
+# Print overlapping sequence
+print("Overlapping sequence:", overlap)
+
+# Input DNA sequence
+dna = input("Enter DNA sequence:")
+
+# Check for overlapping sequence
+if overlap in dna:
+    print("Overlapping sequence found at position", dna.index(overlap))
+else:
+    print("Overlapping sequence not found in DNA sequence.")
+
