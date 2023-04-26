@@ -4,9 +4,9 @@ transcription factor_2 = "GTAAACA"
 # Use the function to check whether they can bind simultaneously
 
 define check(DNA_sequences):
-    sum1 = ""
+    sum1 = []
     mark1 = ""
-    sum2 = ""
+    sum2 = []
     mark2 = ""
     for sum1 in lenth(DNA_SE)
         if DNA_SE(sum_1) == "TATGTAAATA"
@@ -14,9 +14,9 @@ define check(DNA_sequences):
             continue;
             
    for sum2 in lenth(DNA_SE)
-      if DNA_SE(sum_2) == "GTAAACA"
-          mark2 = length(DNA_SE(sum_2))
-          continue;
+        if DNA_SE(sum_2) == "GTAAACA"
+            mark2 = length(DNA_SE(sum_2))
+            continue;
           
 if mark1 - mark2 != 4
     print("True")
