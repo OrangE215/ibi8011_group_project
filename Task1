@@ -1,14 +1,15 @@
 def check_binding(DNA):
  FOXC1_binding_site='TATGTAAATAT'
  FOXL1_binding_site='GTAAACA'
- if DNA.isupper():
+ if set(DNA).issubset('ACTG'):
+# if DNA.isupper():
   if FOXC1_binding_site in DNA or FOXL1_binding_site in DNA:
    print("True")
   else:
    print("False")
  else:
-  print("Warning! The input is incorrect!")
-DNA='input'
+  print("Warning! The input format is incorrect!")
+DNA='AGCGA'
 check_binding(DNA)
 
 #define a function called check_binding
