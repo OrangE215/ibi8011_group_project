@@ -2,7 +2,6 @@ def check_binding(DNA):
  FOXC1_binding_site='TATGTAAATAT'
  FOXL1_binding_site='GTAAACA'
  if set(DNA).issubset('ACTG'):
-# if DNA.isupper():
   if FOXC1_binding_site in DNA or FOXL1_binding_site in DNA:
    print("True")
   else:
