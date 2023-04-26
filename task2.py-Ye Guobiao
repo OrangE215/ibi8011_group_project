@@ -1,19 +1,3 @@
-# task1
-def has_foxc1_binding_site(dna_sequence):
-    binding_motif = 'TATGTAAATAT'
-    if binding_motif in dna_sequence:
-        return True
-    else:
-        return False
-    
-def has_foxl1_binding_site(dna_sequence):
-    binding_motif = 'GTAAACA'
-    if binding_motif in dna_sequence:
-        return True
-    else:
-        return False
-
-# task2
 def has_foxl1_binding_site(dna_sequence):
     binding_motif = 'GTAAACA'
     allowed_ambiguities = {'R': ['A', 'G'], 'K': ['G', 'T'], 'S': ['G', 'C'], 'Y': ['C', 'T'], 'M': ['A', 'C'], 'W': ['A', 'T']}
