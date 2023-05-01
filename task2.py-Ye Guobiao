@@ -1,16 +1,35 @@
-def has_foxl1_binding_site(dna_sequence):
-    binding_motif = 'GTAAACA'
-    allowed_ambiguities = {'R': ['A', 'G'], 'K': ['G', 'T'], 'S': ['G', 'C'], 'Y': ['C', 'T'], 'M': ['A', 'C'], 'W': ['A', 'T']}
+import re
+from itertools import product
 
-    for i, nucleotide in enumerate(binding_motif):
-        if nucleotide in allowed_ambiguities.keys():
-            # Check if the nucleotide is in the allowed ambiguity list
-            if dna_sequence[i] not in allowed_ambiguities[nucleotide]:
-                return False
-        else:
-            # If the nucleotide is not an allowed ambiguity, check if it matches the binding motif
-            if dna_sequence[i] != nucleotide:
-                return False
-    
-    # If all the nucleotides match the binding motif or the allowed ambiguities, return True
-    return True
+# Import IUPAC ambiguity codes for nucleotide degeneracy
+R = ['A', 'G']	
+K = ['G', 'T']	
+S = ['G', 'C']
+Y = ['C', 'T']	
+M = ['A', 'C']	
+W = ['A', 'T']
+B = ['C', 'G', 'T']	
+H = ['A', 'C', 'T']	
+N = ['A', 'C', 'G', 'T']
+D = ['A', 'G', 'T']	
+V = ['A', 'C', 'G']	 
+
+# There is no spacer directly for nucleotides in each resulting sequence
+separator = ''
+
+print('The potential binding motifs for FOXC1 are:\n') 
+
+# use the fuction 'product' to caculate the Cartesian product to get possible combinations of the binding motifs for FOXC1 and use the fuction 'join' to convert each result to a string
+for FOXC1_combinations in product(W, R, W, R, H, M, ['A'], ['A'], Y, ['A'], W):
+    FOXC1_binding_motif = separator.join(FOXC1_combinations)
+    print(FOXC1_binding_motif, end=' ') 
+
+# Start on another line
+print('\n') 
+
+# use the fuction 'product' to caculate the Cartesian product to get possible combinations of the binding motifs for FOXL1 and use the fuction 'join' to convert each result to a string
+print('The potential binding motifs for FOXL1 are:\n')
+
+for FOXL1_combinations in product(R, Y, M, ['A'], ['A'], ['A'], Y, ['A']):
+    FOXL1_binding_motif = separator.join(FOXL1_combinations)
+    print(FOXL1_binding_motif, end=' ') 
