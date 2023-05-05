@@ -1,22 +1,18 @@
-tf1 = "TATGTAAATA"
-tf2 = "GTAAACA"
+dna_sequence = "TATGTAAATATGTAAATATACGTATGTAAATAT"
+motif = "TATGTAAATAT"
+motif_count = 0
+location = ""
+overlap_count = 0
+prev_loc = -1  # Initialize to -1, indicating that there was no previous match
 
-# Find overlapping sequence
-overlap = ""
-for i in range(len(tf1)-4):
-    if tf1[i:i+5] in tf2:
-        overlap = tf1[i:i+5]
-        break
+for i in range(len(dna_sequence) - len(motif) + 1):
+    if dna_sequence[i:i + len(motif)] == motif:
+        motif_count += 1
+        location += str(i)+ '-' + str(i + len(motif)) + ','
+        if prev_loc != -1 and i - prev_loc == 8:
+            overlap_count += 1
+        prev_loc = i  # Update the previous match location
 
-# Print overlapping sequence
-print("Overlapping sequence:", overlap)
-
-# Input DNA sequence
-dna = input("Enter DNA sequence:")
-
-# Check for overlapping sequence
-if overlap in dna:
-    print("Overlapping sequence found at position", dna.index(overlap))
-else:
-    print("Overlapping sequence not found in DNA sequence.")
-
+print("motif count:", motif_count)
+print("motif locations:", location[:-1])
+print("overlap count:", overlap_count)
