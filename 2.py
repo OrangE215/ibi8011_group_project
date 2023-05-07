@@ -21,8 +21,8 @@ def check_binding_with_ambiguities(DNA):
 
 
 dna_sequence = 'ACAAAACA'
-a = check_binding_with_ambiguities(dna_sequence)
-print(a)
+check = check_binding_with_ambiguities(dna_sequence)
+print(check)
 
 # define a function called check_binding_with_ambiguities
 # define the binding sites with ambiguities for FOXC1 and FOXL1
