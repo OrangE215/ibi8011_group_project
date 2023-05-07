@@ -23,3 +23,8 @@ def check_binding_with_ambiguities(DNA):
 dna_sequence = 'ACAAAACA'
 a = check_binding_with_ambiguities(dna_sequence)
 print(a)
+
+# define a function called check_binding_with_ambiguities
+# define the binding sites with ambiguities for FOXC1 and FOXL1
+# check whether the input format is correct, if not, give a warning
+# check if the ambiguities in FOXC1 or FOXL1 allow them to bind this DNA, and present the result by 'check_binding_with_ambiguities(dna_sequence)'
