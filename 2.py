@@ -9,9 +9,9 @@ def check_binding_with_ambiguities(DNA):
         if re.search(FOXC1_ambiguities, DNA) and re.search(FOXL1_ambiguities, DNA):
             print('The ambiguities in both FOXC1 and FOXL1 allow the binding')
         elif re.search(FOXC1_ambiguities, DNA):
-            print('The ambiguities in FOXC1 allow the binding')
+            print('The ambiguities in FOXC1 (not FOXL1) allow the binding')
         elif re.search(FOXL1_ambiguities, DNA):
-            print('The ambiguities in FOXL1 allow the binding')
+            print('The ambiguities in FOXL1 (not FOXC1) allow the binding')
         else:
             print('The ambiguities in FOXC1 and FOXL1 don not allow the binding')
     else:
