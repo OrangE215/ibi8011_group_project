@@ -15,7 +15,7 @@ def check_binding_with_ambiguities(DNA):
         else:
             result = 'The ambiguities in FOXC1 and FOXL1 don not allow the binding'
     else:
-        result = 'Warning! The input format is incorrect!'
+        result = 'Warning! The input format is incorrect! Please use the capital letter "A" "C" "T" "G" to denote the nucleotide sequence of DNA.'
 
     return result
 
