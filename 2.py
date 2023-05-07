@@ -18,7 +18,7 @@ def check_binding_with_ambiguities(DNA):
         print('Warning! The input format is incorrect! Please use the capital letter "A" "C" "T" "G" to denote the nucleotide sequence of DNA')
 
 
-dna_sequence = 'ACAAAACA'
+dna_sequence = 'AAAAAAAATAA'
 check_binding_with_ambiguities(dna_sequence)
 
 # define a function called check_binding_with_ambiguities
