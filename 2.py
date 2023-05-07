@@ -7,22 +7,19 @@ def check_binding_with_ambiguities(DNA):
 
     if set(DNA).issubset('ACTG'):
         if re.search(FOXC1_ambiguities, DNA) and re.search(FOXL1_ambiguities, DNA):
-            result = 'The ambiguities in both FOXC1 and FOXL1 allow the binding'
+            print('The ambiguities in both FOXC1 and FOXL1 allow the binding')
         elif re.search(FOXC1_ambiguities, DNA):
-            result = 'The ambiguities in FOXC1 allow the binding'
+            print('The ambiguities in FOXC1 allow the binding')
         elif re.search(FOXL1_ambiguities, DNA):
-            result = 'The ambiguities in FOXL1 allow the binding'
+            print('The ambiguities in FOXL1 allow the binding')
         else:
-            result = 'The ambiguities in FOXC1 and FOXL1 don not allow the binding'
+            print('The ambiguities in FOXC1 and FOXL1 don not allow the binding')
     else:
-        result = 'Warning! The input format is incorrect! Please use the capital letter "A" "C" "T" "G" to denote the nucleotide sequence of DNA.'
-
-    return result
+        print('Warning! The input format is incorrect! Please use the capital letter "A" "C" "T" "G" to denote the nucleotide sequence of DNA')
 
 
 dna_sequence = 'ACAAAACA'
-check = check_binding_with_ambiguities(dna_sequence)
-print(check)
+check_binding_with_ambiguities(dna_sequence)
 
 # define a function called check_binding_with_ambiguities
 # define the binding sites with ambiguities for FOXC1 and FOXL1
