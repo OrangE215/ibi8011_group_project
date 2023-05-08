@@ -7,7 +7,7 @@ def count_instance(dna_sequence):
     foxc1_count = 0
     foxl1_count = 0
 
-    # Loop through the DNA sequence, counting non-overlapping binding events
+    # Loop through DNA, counting non-overlapping binding events
     for i in range(len(dna_sequence) - len(FOXC1) + 1):
         # Check for FOXC1 binding motif
         if dna_sequence[i:i + len(FOXC1)] == FOXC1:
