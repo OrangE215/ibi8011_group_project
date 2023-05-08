@@ -11,11 +11,11 @@ class find(object):
         location = []
         index = -1
         while True:
-            index = tseq.find(self, index + 1)  # 如果匹配到一样的碱基，就继续匹配下一个，直到匹配结束或者失败
+            index = tseq.find(self, index + 1)  # If the same base is matched, continue to match the next one until the matching is completed or fails
             if index == -1:
                 break
             location.append(index)
-        return location  # 返回值如果是-1，代表匹配不成功
+        return location  # If the return value is -1, it indicates that the matching was unsuccessful
 if re.search(r'[^ATCG]', seq):
     print('The input is incorrect')
 else:
