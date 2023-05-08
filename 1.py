@@ -3,9 +3,9 @@ def check_binding(DNA):
     FOXL1 = 'GTAAACA'
     if set(DNA).issubset('ACTG'):
         if FOXC1 in DNA or FOXL1 in DNA:
-            print('True')
+            print('FOCX1 or FOCXL1 can bind this DNA')
         else:
-            print('False')
+            print('Both FOCX1 and FOCXL1 can not bind this DNA')
     else:
         print('Warning! The input format is incorrect! Please use the capital letter "A" "C" "T" "G" to denote the nucleotide sequence of DNA')
 
