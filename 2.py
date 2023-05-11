@@ -3,7 +3,7 @@ import re
 
 def check_binding_with_ambiguities(DNA):
     FOXC1_ambiguities = '[T|A][A|G][T|A][G|A][T|A|C][A|C]AA[T|C]A[T|A]'
-    FOXL1_ambiguities = '[G|A][T|C][A|C]AAA[C|T]A'
+    FOXL1_ambiguities = '[G|A][T|C][A|C]AA[C|T]A'
 
     if set(DNA).issubset('ACTG'):
         if re.search(FOXC1_ambiguities, DNA) and re.search(FOXL1_ambiguities, DNA):
