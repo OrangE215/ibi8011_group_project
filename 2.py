@@ -6,7 +6,7 @@ def check_binding_with_ambiguities(DNA):
     FOXC1_ambiguities = '[T|A][A|G][T|A][G|A][T|A|C][A|C]AA[T|C]A[T|A]'
     FOXL1_ambiguities = '[G|A][T|C][A|C]AA[C|T]A'
     
-    # Check whether the input format is correct, if not, give a warning
+    # Check whether the input format is correct. if not, give a warning
     if set(DNA).issubset('ACTG'):
         
         # Check if the ambiguities in FOXC1 or FOXL1 allow them to bind this DNA
