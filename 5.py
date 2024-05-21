@@ -16,3 +16,4 @@ for i in range(len(dna_sequence) - len(FOXC1) + 1):
 print("motif count:", motif_count)
 print("motif locations:", location[:-1])
 print("overlap count:", overlap_count)
+
