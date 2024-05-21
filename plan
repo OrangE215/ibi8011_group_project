@@ -10,3 +10,72 @@ Plan:
   task5- Gu_zhaoyu
     Do FOXL1 and FOXC1 have overlapping binding sites? If so, try to print all overlapping binding sites.
   poster- together
+
+
+---
+title: "ADS2 Mock Coding Challenge 2"
+date: "Semester 2, 2023-24"
+output: pdf_document
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+# Treatment for type 1 diabetes (T1D)
+
+Your team developed an insulinomimetic that can be used to substitute insulin in patients with T1D. You induced T1D in mice by injecting them with streptozotocin (this drug destroys pancreatic $\beta$-cells, which abrogates insulin production and leads to the loss of control over glucose metabolism). Subsequently, mice were injected with vehicle or this novel drug in 2 possible concentrations. Their blood glucose level (mM) was measured before the injection and 1 hour after.
+
+Answer the questions below and provide clear and reproducible code as well as your comments.
+
+## Import, check, and organize the data appropriately. Treat data and reformat columns if needed.
+
+```{r}
+data = read.csv("t1d_drug.csv")
+
+anyNA(data)
+data = na.omit(data)
+anyDuplicated(data)
+```
+
+## Plot the data in a useful way.
+
+```{r}
+a = data[data$Treatment=="1 mg/ml",]
+b = data[data$Treatment=="5 mg/ml",]
+c = data[data$Treatment=="Vehicle",]
+boxplot(a$Glucose,b$Glucose,c$Glucose)
+ggplot(a,b,c,aes(x=Treatment, y =Glucose, fill=Measurement)) +  geom_boxplot()
+
+
+ggplot(data,aes(x=Treatment, y =Glucose, fill=Measurement)) +  geom_boxplot()
+```
+
+## Choose, justify, state the statistical hypotheses, and carry out an appropriate test to answer whether the drug is useful.
+
+hypotheses: H0: There is no differences in the Glucose_after group HA: There is differences in the Glucose_after group
+
+use Anova
+
+first check the normality
+
+```{r}
+shapiro.test(data1$Glucose)
+```
+
+```{r}
+data1 = data[data$Measurement=="Glucose_after",]
+aov1 <- aov(Glucose~Treatment, data = data1) 
+aov1
+summary(aov1)
+```
+
+```{r}
+data2 = data[data$Measurement=="Glucose_before",]
+aov2 <- aov(Glucose~Treatment, data = data2) 
+aov2
+summary(aov2)
+```
+
+## Present and discuss your results. Is this novel drug useful? What would you suggest doing next?
